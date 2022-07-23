@@ -1,0 +1,130 @@
+@use '../../scss/' as *;
+
+.banner {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include overlay();
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to top, $body-bg, rgba($black-color, 0));
+    }
+}
+
+.movie_content {
+    @include flex(flex-start, flex-start);
+    max-width: 1260px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    padding: 0 2rem;
+
+    @include tablet;
+    @include mobile {
+        margin-top: -200px;
+    }
+
+    &_poster {
+        flex: 1;
+        @include mobile {
+            display: none;
+        }
+
+        &_img {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: $border-radius;
+            padding-top: 165%;
+        }
+    }
+
+    &_info {
+        width: 70%;
+        position: relative;
+        padding-left: 2rem;
+        text-align: center;
+
+        @include mobile {
+            width: 100%;
+            padding-left: 0;
+        }
+
+        & > * {
+            margin-bottom: 2rem;
+        }
+
+        .title {
+            font-size: 4rem;
+            line-height: 1;
+        }
+
+        .genres {
+
+            @include flex(center, center);
+            
+            & > * ~ * {
+                margin-left: .5rem;
+            }
+
+            &_item {
+                padding: .5rem 1.5rem;
+                border: 2px solid $white-color;
+                border-radius: $border-radius;
+                font-size: .8em;
+                font-weight: 600;
+                background-color: $body-bg;
+            }
+        }
+
+        .overview {
+            @include mobile {
+                text-align: justify;
+            }
+        }
+    }
+}
+
+.casts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
+    margin-top: 2rem;
+
+    &_item {
+        &_img {
+            padding-top: 160%;
+            background-size: cover;
+            margin-bottom: .5rem;
+        }
+
+        &_name {
+            font-size: 1rem;
+        }
+    }
+}
+
+.video {
+    margin-bottom: 3rem;
+
+    &_title {
+        margin-bottom: 3rem;
+    }
+}

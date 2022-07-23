@@ -1,0 +1,103 @@
+@use '../../scss/' as *;
+
+
+.contact {
+    margin: 2.5rem 0;
+
+    .heading {
+        font-size: 1.6rem;
+    }
+}
+
+.form {
+    max-width: 30rem;
+
+    & > * {
+        margin-bottom: 2rem;
+    }
+
+    .group {
+        position: relative;
+        width: 100%;
+
+        .input {
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+            border: 2px solid $grey-color;
+            caret-color: $white-color;
+            padding: 14px 28px;
+            background-color: $body-bg;
+
+            &:focus {
+                border-color: $blue-color;
+            }
+
+            &:hover {
+                border-color: $blue-color;
+            }
+
+            &::placeholder {
+                background-color: $body-bg;
+            }
+
+            &:focus ~ .label,
+            &:not(:placeholder-shown).input:not(:focus) ~ .label {
+                top: -0.015rem;
+                font-size: .8rem;
+                color: $blue-color;
+                padding: 0 6px;
+                border-radius: 2px;
+                border: 2px solid $body-bg;
+                background-color: $body-bg;
+            }
+        }
+
+        .textArea {
+            min-height: 96px;
+            width: 100%;
+            background-color: $body-bg;
+            border-radius: 6px;
+            border: 2px solid $white-color;
+            color: $white-color;
+            font-size: 1rem;
+            text-indent: 1.8rem;
+            padding: 14px 0;
+
+            &:focus {
+                border-color: $blue-color;
+            }
+
+            &:hover {
+                border-color: $blue-color;
+            }
+            
+            &:focus ~ .label,
+            &:not(:placeholder-shown).textArea:not(:focus) ~ .label {
+                top: -0.015rem;
+                font-size: .8rem;
+                color: $blue-color;
+                padding: 0 6px;
+                border-radius: 2px;
+                border: 2px solid $body-bg;
+                background-color: $body-bg;
+            }
+        }
+
+        .label {
+            border: 0;
+            outline: none;
+            font-size: 1rem;
+            position: absolute;
+            top: 50%;
+            left: 6%;
+            transform: translateY(-50%);
+            background-color: $body-bg;
+            cursor: text;
+            transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+            -moz-transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+            -ms-transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+        }
+
+    }
+}

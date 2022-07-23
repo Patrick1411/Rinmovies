@@ -1,0 +1,25 @@
+@use '../../scss/' as *;
+
+.container {
+
+    & > * {
+        margin-bottom: 2rem;
+    }
+
+    .heading {
+        font-size: 1.6rem;
+    }
+
+    .information {
+
+        .paragraph {
+            font-size: 1.2rem;
+            text-align: justify;
+            
+            a {
+                color: $main-color;
+                padding-left: 6px;
+            }
+        }
+    }
+}

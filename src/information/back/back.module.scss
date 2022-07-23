@@ -1,0 +1,19 @@
+@use '../../scss/' as *;
+
+.wrapper {
+    .link {
+        @include flex(center,unset);
+        font-size: 1rem;
+        color: $main-color;
+
+        .icon_arrow_left {
+            transition: .3s ease;
+            position: relative;
+            right: 0;
+        }
+
+        &:hover .icon_arrow_left {
+            right: 4px;
+        }
+    }
+}

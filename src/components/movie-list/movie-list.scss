@@ -1,0 +1,56 @@
+@use '../../scss/' as *;
+
+.movie_list {
+
+    .swiper {
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: $white-color;
+            position: absolute;
+            top: 45%;
+            transform: translateY(-45%);
+
+            &::after {
+                font-size: 1.8rem;
+                background-color: rgba(0, 0, 0, .7);
+                padding: 16px 10px;
+            }
+
+            &:hover {
+                color: $main-color;
+            }
+
+            @include tablet {
+                top: 36%;
+                transform: translateY(-36%);
+            }
+        }
+
+        .swiper-scrollbar {
+            left: 0%;
+            width: 100%;
+
+            .swiper-scrollbar-drag {
+                background: $main-color;
+            }
+        }
+
+        .swiper-wrapper {
+
+            .swiper-slide {
+                width: 16%;
+        
+                @include tablet {
+                    width: 33%;
+                }
+        
+                @include mobile {
+                    width: 31%;
+                }
+            }
+
+        }
+        
+    }
+}

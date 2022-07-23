@@ -1,0 +1,63 @@
+@use '../../scss/' as *;
+
+.modal {
+    @include flex(center, center);
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow: auto;
+    background-color: rgba($color: $black-color, $alpha: .4);
+    visibility: hidden;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &_content {
+        padding: 2rem;
+        background-color: $body-bg;
+        width: 30%;
+        transform: translateY(-54px);
+        -webkit-transform: translateY(-54px);
+        -ms-transform: translateY(-54px);
+        transition: transform .6s ease, opacity .6s ease;
+        position: relative;
+
+        @include tablet {
+            width: 45%;
+            transform: translateY(-220px);
+            -webkit-transform: translateY(-220px);
+            -ms-transform: translateY(-220px);
+        }
+
+        @include mobile {
+            width: 80%;
+            transform: translateY(-20px);
+            -webkit-transform: translateY(-20px);
+            -ms-transform: translateY(-20px);
+        }
+
+        &_close {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            font-size: 1.5rem;
+            cursor: pointer;
+
+            &:hover {
+                color: $main-color;
+            }
+        }
+    }
+
+    &.active & _content {
+        opacity: 1;
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+    }
+}
